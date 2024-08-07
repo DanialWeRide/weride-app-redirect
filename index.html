@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download WeRide App</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // iOS detection
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/us/app/weride-app/id6504784479';
+            }
+            // Android detection
+            else if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.weride.customer&hl=en';
+            } else {
+                // Default action for other devices
+                window.location.href = 'https://yourwebsite.com';
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+    <h1>Redirecting to the App Store...</h1>
+</body>
+</html>
